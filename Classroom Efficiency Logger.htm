@@ -1,0 +1,143 @@
+<html>
+<head>
+  <title>Classroom Efficiency Logger</title>
+</head>
+
+<body bgcolor="#e5e7e5" style="font-family: Verdana, Arial; margin:0;">
+
+<br>
+
+<table width="90%" align="center" bgcolor="#1a5c1a" cellpadding="12" style="border-radius:12px;">
+  
+  <tr>
+    <td>
+      <a href="#" style="color:#ffffff; text-decoration:none;">Contact Us</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="#" style="color:#ffffff; text-decoration:none;">Support</a>
+    </td>
+    <td align="right">
+      <a href="#" style="color:#ffffff; text-decoration:none;">Privacy</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="#" style="color:#ffffff; text-decoration:none;">About Us</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <table>
+        <tr>
+          <td bgcolor="#f5c400" width="50" height="50" align="center" style="border-radius:8px;">
+            <font color="#1a5c1a" size="5"><b>P</b></font>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <td>
+            <font color="#ffffff" size="5"><b>PHINMA Cagayan de Oro College</b></font><br>
+            <font color="#f5c400" size="2">STUDENT INFORMATION SYSTEM</font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+<br>
+
+<table width="90%" align="center" bgcolor="#1a5c1a" cellpadding="20" style="border-radius:12px;">
+  <tr>
+    <td align="center">
+      <font color="#ffffff" size="6"><b>Classroom Efficiency Logger</b></font><br><br>
+      <font color="#f5c400" size="2">Submit your activity feedback to help us improve the learning experience.</font>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<table width="55%" align="center" bgcolor="#ffffff" cellpadding="20" cellspacing="0" style="border-radius:12px;">
+  <tr>
+    <td>
+
+      <p>
+        <font color="#1a5c1a"><b>What is the subject or activity?</b></font><br>
+        <small><font color="#5a7a5a">Enter the subject/activity(ex. ITE-399)</font></small><br><br>
+        <input id="subject" type="text" size="50"
+          style="padding:8px; border-radius:8px; border:2px solid #cfe3cf; background-color:#f7fff7;">
+      </p>
+
+      <p>
+        <font color="#1a5c1a"><b>What is your section?</b></font><br>
+        <small><font color="#5a7a5a">Ex. COC-FB1-IT1 04</font></small><br><br>
+        <input id="section" type="text" size="50"
+          style="padding:8px; border-radius:8px; border:2px solid #cfe3cf; background-color:#f7fff7;">
+      </p>
+
+      <p>
+        <font color="#1a5c1a">Do you have any comments?</font>
+        <i><font color="#5a7a5a">(optional)</font></i><br><br>
+        <textarea id="comments" rows="4" cols="50"
+          style="padding:8px; border-radius:8px; border:2px solid #cfe3cf; background-color:#f7fff7;"></textarea>
+      </p>
+
+      <hr color="#d0e4d0">
+
+      <p>
+        <font color="#1a5c1a"><b>How would you rate this activity?</b></font><br>
+        <small><font color="#5a7a5a">1 = Poor, 5 = Excellent</font></small><br><br>
+        <input type="radio" name="rating" value="1"> 1 &nbsp;
+        <input type="radio" name="rating" value="2"> 2 &nbsp;
+        <input type="radio" name="rating" value="3"> 3 &nbsp;
+        <input type="radio" name="rating" value="4"> 4 &nbsp;
+        <input type="radio" name="rating" value="5"> 5
+      </p>
+
+      <!-- Success message (hidden by default) -->
+      <p id="successMsg" align="center" style="display:none;">
+        <font color="#1a5c1a"><b>✔ Feedback submitted successfully! Thank you.</b></font>
+      </p>
+
+      <p align="center">
+        <input type="button" value="SUBMIT" onclick="handleSubmit()"
+          style="background-color:#1a5c1a; color:#ffffff; padding:12px 45px; font-weight:bold; border:none; border-radius:10px; cursor:pointer;">
+      </p>
+
+      <p align="center">
+        <small><font color="#5a7a5a">"This system is monitored — please use it responsibly."</font></small>
+      </p>
+
+    </td>
+  </tr>
+</table>
+
+<br><br>
+
+<p align="center">
+  <small><font color="#5a7a5a">&copy; 2025 PHINMA Cagayan de Oro College. All rights reserved.</font></small>
+</p>
+
+<br>
+
+<script>
+  function handleSubmit() {
+    // Clear all fields
+    document.getElementById("subject").value = "";
+    document.getElementById("section").value = "";
+    document.getElementById("comments").value = "";
+
+    // Uncheck all radio buttons
+    var radios = document.querySelectorAll('input[name="rating"]');
+    radios.forEach(function(r) { r.checked = false; });
+
+    // Show success message
+    var msg = document.getElementById("successMsg");
+    msg.style.display = "block";
+
+    // Hide success message after 3 seconds
+    setTimeout(function() {
+      msg.style.display = "none";
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
